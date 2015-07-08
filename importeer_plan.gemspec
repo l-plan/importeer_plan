@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["rolf"]
   spec.email         = ["rolf@l-plan.nl"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
+  # if spec.respond_to?(:metadata)
+  #   spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
+  # end
 
   spec.summary       = %q{only purpose is provide some reusable defaults for importing and handling (.xls-)files }
   spec.description   = %q{only purpose is provide some reusable defaults for importing and handling (.xls-)files }
