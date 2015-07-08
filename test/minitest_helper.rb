@@ -10,10 +10,10 @@ require 'minitest/autorun'
 
 require "minitest/reporters"
 
-
 Minitest::Reporters.use! [Minitest::Reporters::ProgressReporter.new] 
 
 class Minitest::Test
+
 
 	def setup
 		return if  File.exist?( Rails.root.join('public/imports/testje.xls')  )
@@ -34,4 +34,5 @@ class Minitest::Test
 	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.xls')  ) }
 
 end
+
 
