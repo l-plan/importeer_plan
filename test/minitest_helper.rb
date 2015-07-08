@@ -1,10 +1,11 @@
+require 'importeer_plan'
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
-require 'rails/test_help'
+
 ENV["RAILS_ENV"] = "test"
 
+require 'rails/test_help'
 
-require 'importeer_plan'
 
 require 'minitest/autorun'
 
@@ -34,5 +35,3 @@ class Minitest::Test
 	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.xls')  ) if File.exist?( Rails.root.join('public/imports/testje.xls') ) }
 
 end
-
-
