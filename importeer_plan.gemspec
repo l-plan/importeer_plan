@@ -22,15 +22,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "spreadsheet"
+  spec.add_dependency "spreadsheet", '~> 0'
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rails", ">= 4.0.0"
-  spec.add_development_dependency "mysql2", ">= 0.3.0"
+  spec.add_development_dependency "rails" '~> 4.0'
+  spec.add_development_dependency "mysql2", "~> 0.3"
 
-  spec.add_development_dependency 'minitest', ">=  5.4.0"
-  spec.add_development_dependency "minitest-reporters"
-  spec.add_development_dependency "gem-release"
+  spec.add_development_dependency 'minitest', "~> 5.4"
+  spec.add_development_dependency "minitest-reporters", '~> 0'
+  spec.add_development_dependency "gem-release", '~> 0'
 
 end
