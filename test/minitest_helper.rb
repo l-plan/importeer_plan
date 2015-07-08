@@ -31,7 +31,7 @@ class Minitest::Test
 	end
 
 
-	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.xls')  ) }
+	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.xls')  ) if File.exist?( Rails.root.join('public/imports/testje.xls') ) }
 
 end
 

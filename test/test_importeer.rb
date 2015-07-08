@@ -10,9 +10,7 @@ class TestImporteer < Minitest::Test
 	     refute_nil ::ImporteerPlan::VERSION
 	    end
 
-	    it "test the obvious" do
-	     refute_nil ::ImporteerPlan::VERSION
-	    end
+
 
 
 	end
