@@ -1,4 +1,4 @@
-require "importeer_plan/version"
+# require "importeer_plan/version"
 
 module ImporteerPlan
 		class Importeer
@@ -30,3 +30,4 @@ module ImporteerPlan
 		end
 
 end
+
