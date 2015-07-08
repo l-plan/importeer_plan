@@ -1,8 +1,8 @@
 # ImporteerPlan
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/importeer_plan`. To experiment with that code, run `bin/console` for an interactive prompt.
+The sole purpose of this gem is to provide the boilerplate code necessary to import and proces data from files for my applications.
+This reduces duplication and eases maintenance.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +22,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Importeer.new takes two options:
+
+* name (string)
+* size of batch_of_lines_to_import  (integer, optional, defaults to 1000)
+
+
+My applications-classes for processing data from external files inherit from Importeer.
+
+```ruby
+class ImporteerSomething < Importeer
+	attr_accessor :my_var, :another_var
+	#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size)
+
+	def initialize(*)
+		super
+		@my_var = MyVar.all
+		@another_var = AnotherVar.all
+	end
+end
+```
 
 ## Development
 
