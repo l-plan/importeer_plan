@@ -28,10 +28,14 @@ Importeer.new takes two options:
 * size of batch_of_lines_to_import  (integer, optional, defaults to 1000)
 
 
-My applications-classes for processing data from external files inherit from Importeer.
+My applications-classes for processing data from external files inherit from Importeer, depending the file-type:
+
+* xls: ImporteerPlan::MyXls
+* csv: ImporteerPlan::MyCsv
+* txt: ImporteerPlan::MyTxt
 
 ```ruby
-class ImporteerSomething < ImporteerPlan::Importeer
+class ImporteerSomething < ImporteerPlan::MyXls
 	attr_accessor :my_var, :another_var
 	#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size)
 
