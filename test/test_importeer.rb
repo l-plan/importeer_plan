@@ -34,8 +34,8 @@ class TestImporteer < Minitest::Test
 
 	end
 
-  	describe "Xls" do	
-  		let(:xls) { ImporteerPlan::Importeer::Xls.new('testje.xls') }
+  	describe "MyXls" do	
+  		let(:xls) { ImporteerPlan::MyXls.new('testje.xls') }
 
 	    it "test that importeer exists" do
 	     refute_nil xls
@@ -50,7 +50,7 @@ class TestImporteer < Minitest::Test
 	    end
 
 	    it "test size of batch when declared" do
-	     ImporteerPlan::Importeer::Xls.new('testje.xls', 123).size_batch.must_equal 123
+	     ImporteerPlan::MyXls.new('testje.xls', 123).size_batch.must_equal 123
 	    end
 
 	    it "test the first line of the file" do
