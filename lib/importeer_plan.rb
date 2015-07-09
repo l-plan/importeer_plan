@@ -1,4 +1,4 @@
-require "importeer_plan/version"
+# require "importeer_plan/version"
 
 module ImporteerPlan
 		class Importeer
@@ -19,6 +19,8 @@ module ImporteerPlan
 				Rails.root.join('public/imports/')
 			end
 
+			def bron
+			end
 
 			def importeer
 				bron.each{|batch| importeer_batch batch}
@@ -26,7 +28,7 @@ module ImporteerPlan
 
 		end
 
-		class Xls < Importeer
+		class MyXls < Importeer
 			def initialize(*)
 				super
 			end
@@ -36,5 +38,25 @@ module ImporteerPlan
 			end
 		end
 
+		class  MyCsv< Importeer
+			def initialize(*)
+				super
+			end
+
+			def bron
+			 	# Csv.open(@path).worksheet(0).to_a.tap{|x| x.shift}.each_slice(size_batch).each
+			end
+		end
+
+		class  MyTxt< Importeer
+			def initialize(*)
+				super
+			end
+
+			def bron
+			 	# Csv.open(@path).worksheet(0).to_a.tap{|x| x.shift}.each_slice(size_batch).each
+			end
+		
+		end
 end
 
