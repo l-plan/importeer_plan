@@ -1,4 +1,5 @@
-
+###### 0.1.0
+version bump
 
 ###### 0.0.8
 path Rails.root.join instead of absolute
