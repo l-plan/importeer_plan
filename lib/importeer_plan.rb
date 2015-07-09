@@ -11,7 +11,7 @@ module ImporteerPlan
 
 			def initialize(name, size_batch = 1000)
 				@name = name
-				@path = File.absolute_path( Importeer.dir.join( @name ) )
+				@path = Importeer.dir.join( @name ) 
 				@size_batch = size_batch#||1000
 			end
 

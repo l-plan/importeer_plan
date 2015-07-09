@@ -1,3 +1,11 @@
+
+
+###### 0.0.8
+path Rails.root.join instead of absolute
+
+###### 0.0.7
+inherit from ImporteerPlan::MyXls instead of ImporteerPlan::Importeer
+
 ###### 0.0.6
 nothing happened
 
