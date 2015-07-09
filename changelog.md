@@ -1,3 +1,6 @@
+###### 0.1.1
+inherit from ImporteerPlan::MyCsv
+
 ###### 0.1.0
 version bump
 

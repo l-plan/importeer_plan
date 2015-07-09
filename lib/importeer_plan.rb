@@ -1,8 +1,8 @@
-# require "importeer_plan/version"
+require "importeer_plan/version"
 
 module ImporteerPlan
 		class Importeer
-		require 'spreadsheet'
+		
 
 		attr_accessor :path, :name, :dir, :size_batch
 			#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size_)
@@ -29,6 +29,7 @@ module ImporteerPlan
 		end
 
 		class MyXls < Importeer
+			require 'spreadsheet'
 			def initialize(*)
 				super
 			end
@@ -39,12 +40,14 @@ module ImporteerPlan
 		end
 
 		class  MyCsv< Importeer
-			def initialize(*)
+			require 'csv'
+			def initialize(name, size_batch = 1000, sep=";")
 				super
+				@sep = sep
 			end
 
 			def bron
-			 	# Csv.open(@path).worksheet(0).to_a.tap{|x| x.shift}.each_slice(size_batch).each
+			 	CSV.read(path, { :col_sep => @sep }).each_slice(@size_batch)
 			end
 		end
 
