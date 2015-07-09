@@ -34,7 +34,33 @@ class TestImporteer < Minitest::Test
 
 	end
 
+  	describe "Xls" do	
+  		let(:xls) { ImporteerPlan::Importeer::Xls.new('testje.xls') }
 
+	    it "test that importeer exists" do
+	     refute_nil xls
+	    end
+
+	    it "test name of the file" do
+	     xls.name.must_equal 'testje.xls'
+	    end
+
+	    it "test size of batch" do
+	     xls.size_batch.must_equal 1000
+	    end
+
+	    it "test size of batch when declared" do
+	     ImporteerPlan::Importeer::Xls.new('testje.xls', 123).size_batch.must_equal 123
+	    end
+
+	    it "test the first line of the file" do
+	     Spreadsheet.open(xls.path).worksheet(0).row(0).to_a.must_equal ['A', 'B', 'C', 'D', 'E', 'F']
+	 	end
+
+
+
+
+	end
  
 
 end

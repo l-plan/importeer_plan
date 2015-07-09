@@ -43,8 +43,9 @@ class ImporteerSomething < ImporteerPlan::Importeer
 end
 ```
 
-## Development
-
+## Test
+ImporteerPlan uses minitest.
+Run rake to start the test-suite.
 
 
 ## Contributing

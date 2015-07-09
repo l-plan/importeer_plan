@@ -19,14 +19,21 @@ module ImporteerPlan
 				Rails.root.join('public/imports/')
 			end
 
-			def bron
-			 	Spreadsheet.open(@path).worksheet(0).to_a.tap{|x| x.shift}.each_slice(size_batch).each
-			end
 
 			def importeer
 				bron.each{|batch| importeer_batch batch}
 			end
 
+		end
+
+		class Xls < Importeer
+			def initialize(*)
+				super
+			end
+
+			def bron
+			 	Spreadsheet.open(@path).worksheet(0).to_a.tap{|x| x.shift}.each_slice(size_batch).each
+			end
 		end
 
 end
