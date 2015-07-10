@@ -55,7 +55,7 @@ module ImporteerPlan
 			end
 
 			def bron
-			 	CSV.read(path, { :col_sep => @sep , :row_sep =>"n"}).tap{|x| x.shift}.each_slice(@size_batch)
+			 	CSV.read(path, { :col_sep => @sep , :encoding => "ISO-8859-1"}).tap{|x| x.shift}.each_slice(@size_batch)
 			end
 		end
 
