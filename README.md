@@ -32,7 +32,8 @@ My applications-classes for processing data from external files inherit from Imp
 
 * xls: ImporteerPlan::MyXls
 * csv: ImporteerPlan::MyCsv
-* txt: ImporteerPlan::MyTxt
+* txt: ImporteerPlan::MyTxt (todo)
+
 
 ```ruby
 class ImporteerSomething < ImporteerPlan::MyXls
@@ -46,6 +47,15 @@ class ImporteerSomething < ImporteerPlan::MyXls
 	end
 end
 ```
+
+
+### methods
+
+##### importeer
+
+* commaf(string) where string is a dutch amount, separated by ',' turning to a float
+
+* pointf(string) where string is a dutch amount, separated by '.' turning to a float
 
 ## Test
 ImporteerPlan uses minitest.

@@ -29,8 +29,13 @@ class TestImporteer < Minitest::Test
 	     Spreadsheet.open(importeer.path).worksheet(0).row(0).to_a.must_equal ['A', 'B', 'C', 'D', 'E', 'F']
 	 	end
 
+	 	it "test dutch string-comma-separated amount to float" do
+	 		importeer.commaf('1,2375').must_equal 1.24
+	 	end
 
-
+	 	it "test dutch string-point-separated amount to float" do
+	 		importeer.commaf('1.2375').must_equal 1.24
+	 	end
 
 	end
 

@@ -1,5 +1,7 @@
 ###### 0.1.1
 inherit from ImporteerPlan::MyCsv
+added commaf to importeer
+added pointf to importeer
 
 ###### 0.1.0
 version bump

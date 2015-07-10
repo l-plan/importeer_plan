@@ -26,6 +26,14 @@ module ImporteerPlan
 				bron.each{|batch| importeer_batch batch}
 			end
 
+			def commaf(str) # comma-float; "1,234" 
+				   ('%.2f' % str.gsub(',', '.') ).to_f
+			end
+
+			def pointf(str) # point-float; "1.234"
+				   ('%.2f' % str.gsub(',', '.') ).to_f
+			end
+
 		end
 
 		class MyXls < Importeer
