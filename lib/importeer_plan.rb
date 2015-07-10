@@ -41,9 +41,9 @@ module ImporteerPlan
 
 		class  MyCsv< Importeer
 			require 'csv'
-			def initialize(name, size_batch = 1000, sep=";")
+			def initialize(*)
 				super
-				@sep = sep
+				@sep = ";"
 			end
 
 			def bron

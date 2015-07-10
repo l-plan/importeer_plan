@@ -29,9 +29,18 @@ class Minitest::Test
 
 		doel.write( Rails.root.join('public/imports/testje.xls') )
 
+		doel = CSV.open(Rails.root.join('public/imports/testje.csv'), "wb", col_sep: ";") do |csv|
+		 csv <<  %w(A B C D E F)
+		 csv <<  %w(a b c d e f)
+		  # ...
+		end
+
+		doel.close if !doel.closed?
+
 	end
 
 
 	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.xls')  ) if File.exist?( Rails.root.join('public/imports/testje.xls') ) }
+	Minitest.after_run { File.delete( Rails.root.join('public/imports/testje.csv')  ) if File.exist?( Rails.root.join('public/imports/testje.csv') ) }
 
 end

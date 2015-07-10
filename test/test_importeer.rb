@@ -62,6 +62,33 @@ class TestImporteer < Minitest::Test
 
 	end
  
+  	describe "MyCsv" do	
+  		let(:csv) { ImporteerPlan::MyCsv.new('testje.csv') }
+
+	    it "test that importeer exists" do
+	     refute_nil csv
+	    end
+
+	    it "test name of the file" do
+	     csv.name.must_equal 'testje.csv'
+	    end
+
+	    it "test size of batch" do
+	     csv.size_batch.must_equal 1000
+	    end
+
+	    it "test size of batch when declared" do
+	     # ImporteerPlan::MyXls.new('testje.csv', 123).size_batch.must_equal 123
+	    end
+
+	    it "test the first line of the file" do
+	     # Spreadsheet.open(xls.path).worksheet(0).row(0).to_a.must_equal ['A', 'B', 'C', 'D', 'E', 'F']
+	 	end
+
+
+
+
+	end
 
 end
 
