@@ -25,7 +25,11 @@ Or install it yourself as:
 Importeer.new takes two options:
 
 * name (string)
-* size of batch_of_lines_to_import  (integer, optional, defaults to 1000)
+* an options-hash 
+	
+	* size of batch_of_lines_to_import  (size_batch, integer, optional, defaults to 1000)
+	* type of separator for csv-files (sep, string, optional, defaults to ";")
+	* method of import: initial or replacing (initial, false or true, optional, defaults to false)
 
 
 My applications-classes for processing data from external files inherit from Importeer, depending the file-type:
@@ -38,7 +42,7 @@ My applications-classes for processing data from external files inherit from Imp
 ```ruby
 class ImporteerSomething < ImporteerPlan::MyXls
 	attr_accessor :my_var, :another_var
-	#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size)
+	#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", {size_batch: 1234})
 
 	def initialize(*)
 		super

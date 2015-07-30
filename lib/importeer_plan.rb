@@ -4,15 +4,17 @@ module ImporteerPlan
 		class Importeer
 		
 
-		attr_accessor :path, :name, :dir, :size_batch
+		attr_accessor :path, :name, :dir, :size_batch, :sep, :initial
 			#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size_)
 
 
 
-			def initialize(name, size_batch = 1000)
+			def initialize(name, options = {size_batch: 1000, sep: ";", initial: false})
 				@name = name
 				@path = Importeer.dir.join( @name ) 
-				@size_batch = size_batch#||1000
+				@size_batch = options[:size_batch]#||1000
+				@sep = options[:sep]
+				@initial = options[:initial]
 			end
 
 			def self.dir
@@ -51,7 +53,7 @@ module ImporteerPlan
 			require 'csv'
 			def initialize(*)
 				super
-				@sep = ";"
+				# @sep = options[:sep]
 			end
 
 			def bron
