@@ -1,3 +1,9 @@
+###### 0.2.1
+added sweep-method
+
+###### 0.2.0
+Importeer takes two arguments: name and an options-hash
+
 ###### 0.1.1
 inherit from ImporteerPlan::MyCsv
 added commaf to importeer

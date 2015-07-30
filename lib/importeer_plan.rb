@@ -24,7 +24,11 @@ module ImporteerPlan
 			def bron
 			end
 
+			def sweep
+			end
+
 			def importeer
+				sweep
 				bron.each{|batch| importeer_batch batch}
 			end
 
