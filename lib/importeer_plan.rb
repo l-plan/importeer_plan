@@ -9,12 +9,13 @@ module ImporteerPlan
 
 
 
-			def initialize(name, options = {size_batch: 1000, sep: ";", initial: false})
+			def initialize(name, options={})
+				@options = options
 				@name = name
 				@path = Importeer.dir.join( @name ) 
-				@size_batch = options[:size_batch]#||1000
-				@sep = options[:sep]
-				@initial = options[:initial]
+				@size_batch = options[:size_batch]||1000
+				@sep = options[:sep]|| ";"
+				@initial = options[:initial]|| false
 			end
 
 			def self.dir
