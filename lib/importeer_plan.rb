@@ -4,7 +4,7 @@ module ImporteerPlan
 		class Importeer
 		
 
-		attr_accessor :path, :name, :dir, :size_batch, :sep, :initial
+		attr_accessor :path, :name, :dir, :size_batch, :sep, :initial, :options
 			#call importeer("filename") to import the file in batches of 1000, optional importeer("filename", size_)
 
 
