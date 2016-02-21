@@ -52,6 +52,59 @@ class ImporteerSomething < ImporteerPlan::MyXls
 end
 ```
 
+#### a very,very simple example: processing a file called 'example.xls'
+
+```ruby
+
+e = ImporteerPlan::MyXls.new('example.xls')
+
+e.importeer
+
+```
+
+this works, after you created a file like this:
+
+```ruby
+#save this file as: importeer_example.rb
+
+class ImporteerExample < ImporteerPlan::MyXls
+
+	def importeer_batch(batch)
+		batch.each do |row|
+			handle_my_model row
+		end
+	end
+
+
+	def handle_my_model ref
+		r=MyModel.new
+		r.attribute_one = ref[0] unless ref[0].blank?
+		r.another_attribute = ref[1] unless ref[1].blank?
+
+		r.save! if r.attributes.values.any? {|x| !x.blank?}
+	end
+
+
+end
+
+
+```
+
+
+### configuration
+
+Starting 0.3.0, i added some configuration-options. The most basic configuration is setting the path to find the files to import. The default is creating a folder in the 'public' folder, but you could so something like:
+
+```ruby
+
+	  ImporteerPlan.configure do |config|
+	    config.dir  = Rails.root.join('imports')
+	  end
+```
+
+
+
+
 
 ### methods
 

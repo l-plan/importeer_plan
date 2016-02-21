@@ -1,4 +1,5 @@
 require "importeer_plan/version"
+require 'importeer_plan/configuration'
 
 module ImporteerPlan
 		class Importeer
@@ -19,7 +20,10 @@ module ImporteerPlan
 			end
 
 			def self.dir
-				Rails.root.join('public/imports/')
+				# Rails.root.join('public/imports/')
+
+				ImporteerPlan.configuration.dir
+
 			end
 
 			def bron
